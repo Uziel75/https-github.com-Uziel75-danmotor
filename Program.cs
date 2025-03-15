@@ -6,11 +6,11 @@ namespace danmotor
             static void Main()
             {
                 Console.WriteLine(" Select a motor system concept:");
-                Console.WriteLine("[1] Irrigation Motor (Thailand)");
-                Console.WriteLine("[2] Motorcycle Engine (Indonesia)");
-                Console.WriteLine("[3] Industrial Conveyor (Malaysia)");
+                Console.WriteLine("[1] (Thailand)");
+                Console.WriteLine("[2] (Indonesia)");
+                Console.WriteLine("[3] (Malaysia)");
                 Console.WriteLine("[4] Exit");
-                Console.Write("Enter your choice: ");
+                Console.Write("Enter your setup: ");
 
                 if (int.TryParse(Console.ReadLine(), out int choice))
                 {
@@ -37,21 +37,21 @@ namespace danmotor
                 }
                 else
                 {
-                    Console.WriteLine("⚠️ Please enter a valid number.");
+                    Console.WriteLine("Enter valid number setup.");
                 }
             }
 
             // 🇹🇭 Thailand Concept: Irrigation Motor System
             static void ThailandMotor()
             {
-                bool pumpMotor = false;
+                bool thiaMotor = false;
 
                 while (true)
                 {
                     Console.WriteLine("Motor System:");
-                    Console.WriteLine("[1]  Turn On Water Pump");
-                    Console.WriteLine("[2]  Turn Off Water Pump");
-                    Console.WriteLine("[3]  Check Water Flow");
+                    Console.WriteLine("[1]  Rimset 17's");
+                    Console.WriteLine("[2]  Lowered,open canister");
+                    Console.WriteLine("[3]  Ligthen Swing Arm/faring");
                     Console.WriteLine("[4]  Back");
                     Console.Write("Enter your choice: ");
 
@@ -62,20 +62,20 @@ namespace danmotor
                         switch (action)
                         {
                             case 1:
-                                pumpMotor = true;
-                                Console.WriteLine("✅ Water pump is now ON.");
+                                thiaMotor = true;
+                                Console.WriteLine("Rimset 17's");
                                 break;
                             case 2:
-                                pumpMotor = false;
-                                Console.WriteLine("⛔ Water pump is now OFF.");
+                                thiaMotor = false;
+                                Console.WriteLine("Lowered,open canister");
                                 break;
                             case 3:
-                                Console.WriteLine(pumpMotor ? "🌊 Water is flowing." : "🚱 No water flow detected.");
+                                Console.WriteLine(thiaMotor ? "Ligthen Swing Arm/faring" : "No Ligthen Swing Arm/faring.");
                                 break;
                             case 4:
                                 return;
                             default:
-                                Console.WriteLine(" Invalid motor setup.");
+                                Console.WriteLine(" Invalid thiasetup.");
                                 break;
                         }
                     }
@@ -89,18 +89,15 @@ namespace danmotor
             // 🇮🇩 Indonesia Concept: Motorcycle Engine
             static void IndonesiaMotor()
             {
-                bool engineOn = false;
-                int speed = 0;
-                int fuelLevel = 100;
-
+                bool indoMotor = false;
+               
                 while (true)
                 {
-                    Console.WriteLine(" motor System:");
-                    Console.WriteLine("[1]  Start Engine");
-                    Console.WriteLine("[2] Increase Speed");
-                    Console.WriteLine("[3] Check Fuel Level");
-                    Console.WriteLine("[4] Stop Engine");
-                    Console.WriteLine("[5] Back");
+                    Console.WriteLine("Motor System:");
+                    Console.WriteLine("[1]  Mags 14's");
+                    Console.WriteLine("[2]  Lowered");
+                    Console.WriteLine("[3]  alloy crank");
+                    Console.WriteLine("[4]  Back");
                     Console.Write("Enter your choice: ");
 
                     if (int.TryParse(Console.ReadLine(), out int action))
@@ -110,57 +107,42 @@ namespace danmotor
                         switch (action)
                         {
                             case 1:
-                                engineOn = true;
-                                Console.WriteLine(" Engine started.");
+                                indoMotor = true;
+                                Console.WriteLine("Rimset 17's");
                                 break;
                             case 2:
-                                if (engineOn && fuelLevel > 0)
-                                {
-                                    speed += 10;
-                                    fuelLevel -= 5;
-                                    Console.WriteLine($"Speed increased to {speed} km/h.");
-                                }
-                                else
-                                {
-                                    Console.WriteLine(" Engine is off or fuel is empty!");
-                                }
+                                indoMotor = false;
+                                Console.WriteLine("Lowered");
                                 break;
                             case 3:
-                                Console.WriteLine($" Fuel level: {fuelLevel}%.");
+                                Console.WriteLine(indoMotor ? "alloy crank" : "No alloy crank");
                                 break;
                             case 4:
-                                engineOn = false;
-                                speed = 0;
-                                Console.WriteLine(" Engine stopped.");
-                                break;
-                            case 5:
                                 return;
                             default:
-                                Console.WriteLine(" Invalid motor set up.");
+                                Console.WriteLine(" Invalid indoMotor.");
                                 break;
                         }
                     }
                     else
                     {
-                        Console.WriteLine(" Please enter a valid number.");
+                        Console.WriteLine("Please enter a valid number.");
                     }
                 }
             }
-
             
             static void MalaysiaMotor()
             {
-                bool conveyorRunning = false;
-                int speed = 0;
+                bool malayMotor = false;
+                
 
                 while (true)
                 {
-                    Console.WriteLine(" motor System:");
-                    Console.WriteLine("[1]  Start motor");
-                    Console.WriteLine("[2]  Increase Speed");
-                    Console.WriteLine("[3] Decrease Speed");
-                    Console.WriteLine("[4] Stop motor");
-                    Console.WriteLine("[5] Back");
+                     Console.WriteLine("Motor System:");
+                    Console.WriteLine("[1]  CNC Mags 14's");
+                    Console.WriteLine("[2]  Nickel GP4 Caliper");
+                    Console.WriteLine("[3]  CNC crank");
+                    Console.WriteLine("[4]  Back");
                     Console.Write("Enter your choice: ");
 
                     if (int.TryParse(Console.ReadLine(), out int action))
@@ -170,46 +152,26 @@ namespace danmotor
                         switch (action)
                         {
                             case 1:
-                                conveyorRunning = true;
-                                Console.WriteLine(" motor is now running.");
+                                malayMotor = true;
+                                Console.WriteLine("CNC Mags 14's's");
                                 break;
                             case 2:
-                                if (conveyorRunning)
-                                {
-                                    speed += 5;
-                                    Console.WriteLine($"motor increased to {speed} RPM.");
-                                }
-                                else
-                                {
-                                    Console.WriteLine(" moor is OFF! Please turn it on first.");
-                                }
+                                malayMotor = false;
+                                Console.WriteLine("Nickel GP4 Caliper");
                                 break;
                             case 3:
-                                if (conveyorRunning && speed > 0)
-                                {
-                                    speed -= 5;
-                                    Console.WriteLine($"  motor decreased to {speed} RPM.");
-                                }
-                                else
-                                {
-                                    Console.WriteLine(" motor is already at minimum speed.");
-                                }
+                                Console.WriteLine(malayMotor ? "CNC crank" : "No CNC crank");
                                 break;
                             case 4:
-                                conveyorRunning = false;
-                                speed = 0;
-                                Console.WriteLine(" motor stopped.");
-                                break;
-                            case 5:
                                 return;
                             default:
-                                Console.WriteLine(" Invalid motor setup.");
+                                Console.WriteLine(" Invalid malayMotor.");
                                 break;
                         }
                     }
                     else
                     {
-                        Console.WriteLine(" Please enter a valid number.");
+                        Console.WriteLine("Please enter a valid number.");
                     }
                 }
             }
